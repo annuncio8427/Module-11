@@ -1,4 +1,4 @@
-# 📝 Doubly Linked List: Search an Element
+# 📖 Doubly Linked List: Search an Element
 
 This Python program demonstrates the implementation of a **Doubly Linked List** where you can insert elements at both the beginning and the end of the list. Additionally, it allows you to search for a specific element in the list.
 
@@ -12,7 +12,7 @@ To write a Python program that:
 
 ---
 
-## 🧠 Algorithm
+## 🔵 Algorithm
 
 1. **Step 1:** Define a class `Nodeq` with:
    - `data` to store the node's value.
@@ -35,6 +35,7 @@ To write a Python program that:
 
 ## 💻 Program
 
+```python
 class Nodeq:
     def __init__(self, data):
         self.data = data
@@ -49,26 +50,26 @@ class DoublyLinkedList:
         new_node = Nodeq(data)
         if self.head is None:
             self.head = new_node
-            return
-        new_node.next = self.head
-        self.head.prev = new_node
-        self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
 
     def insert_end(self, data):
         new_node = Nodeq(data)
         if self.head is None:
             self.head = new_node
-            return
-        temp = self.head
-        while temp.next is not None:
-            temp = temp.next
-        temp.next = new_node
-        new_node.prev = temp
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = new_node
+            new_node.prev = temp
 
     def search(self, data):
         temp = self.head
         position = 0
-        while temp is not None:
+        while temp:
             if temp.data == data:
                 return f"Element {data} found at position {position}"
             temp = temp.next
@@ -88,21 +89,22 @@ dll.insert_end(50)
 print(dll.search(40))
 
 print(dll.search(100))
+```
 
+---
 
-## Sample Output
+## 📤 Sample Output
 
+```
 Element 40 found at position 2
-
 Element 100 not found in the list
+```
 
+---
 
-## Result
+## ✅ Result
 
 The program successfully:
-
-Implements a Doubly Linked List
-
-Inserts nodes at the beginning and end
-
-Searches and reports whether a given element exists in the list and its position if found
+- Implements a Doubly Linked List with insert and search operations
+- Inserts elements at both the beginning and end of the list
+- Searches for elements and returns their position or a not-found message
