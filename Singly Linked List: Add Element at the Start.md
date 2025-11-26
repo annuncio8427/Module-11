@@ -10,31 +10,29 @@ To write a Python program that adds a **new element** at the **start** of a sing
 
 ---
 
-## 🧠 Algorithm
+## 🔵 Algorithm
 
 1. **Step 1:** Define a class `Node` with:
    - `data` to store the node's value.
    - `next` to store the reference to the next node.
-   
+
 2. **Step 2:** Define a class `LinkedList` with:
    - `head` to point to the first node.
-   
+
 3. **Step 3:** In the `LinkedList` class, define a method `push_front(newElement)`:
    - Create a new node with `newElement`.
    - Set the new node's next pointer to the current head node.
-   - Set the head to the new node.
+   - Update head to point to the new node.
 
-4. **Step 4:** Define a method `PrintList()` to display the list:
-   - Print the elements of the list or display "The list is empty." if the list is empty.
+4. **Step 4:** Define a `PrintList` method to traverse and print all elements.
 
-5. **Step 5:** Instantiate a `LinkedList` object, `MyList`, and add elements at the start using the `push_front()` method.
-
-6. **Step 6:** Call the `PrintList()` method to display the list.
+5. **Step 5:** Create a `LinkedList` instance, add elements using `push_front()`, and print the list.
 
 ---
 
-## Program
+## 💻 Program
 
+```python
 class Node:
     def __init__(self, data):
         self.data = data
@@ -65,18 +63,21 @@ MyList.push_front(20)
 MyList.push_front(10)
 
 MyList.PrintList()
+```
 
-## Sample Output
+---
 
+## 📤 Sample Output
+
+```
 10 20 30
+```
 
+---
 
-## Result
+## ✅ Result
 
 The program successfully:
-
-Implements a Singly Linked List
-
-Inserts new elements at the start of the list using push_front()
-
-Displays the updated list using PrintList()
+- Implements a singly linked list
+- Adds elements at the start using push_front method
+- Prints the list in order (10 20 30)
