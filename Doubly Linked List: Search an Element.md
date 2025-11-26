@@ -34,9 +34,75 @@ To write a Python program that:
 ---
 
 ## 💻 Program
-Add Code here
+
+class Nodeq:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_beginning(self, data):
+        new_node = Nodeq(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        new_node.next = self.head
+        self.head.prev = new_node
+        self.head = new_node
+
+    def insert_end(self, data):
+        new_node = Nodeq(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+        temp.next = new_node
+        new_node.prev = temp
+
+    def search(self, data):
+        temp = self.head
+        position = 0
+        while temp is not None:
+            if temp.data == data:
+                return f"Element {data} found at position {position}"
+            temp = temp.next
+            position += 1
+        return f"Element {data} not found in the list"
+
+dll = DoublyLinkedList()
+
+dll.insert_beginning(30)
+
+dll.insert_end(40)
+
+dll.insert_beginning(20)
+
+dll.insert_end(50)
+
+print(dll.search(40))
+
+print(dll.search(100))
+
 
 ## Sample Output
 
+Element 40 found at position 2
+
+Element 100 not found in the list
+
+
 ## Result
 
+The program successfully:
+
+Implements a Doubly Linked List
+
+Inserts nodes at the beginning and end
+
+Searches and reports whether a given element exists in the list and its position if found
