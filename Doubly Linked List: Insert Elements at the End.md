@@ -13,7 +13,7 @@ To write a Python program that:
 
 ---
 
-## 🧠 Algorithm
+## 🔵 Algorithm
 
 1. **Step 1:** Define a class `Node` to represent each node in the doubly linked list with attributes:
    - `item` for storing the data of the node.
@@ -36,15 +36,14 @@ To write a Python program that:
 
 ## 💻 Program
 
+```python
 class Node:
-
     def __init__(self, item):
         self.item = item
         self.nref = None
         self.pref = None
 
 class DoublyLinkedList:
-
     def __init__(self):
         self.start_node = None
 
@@ -76,26 +75,25 @@ class DoublyLinkedList:
             n = n.nref
 
 dll = DoublyLinkedList()
-
 dll.insert_at_end(10)
-
 dll.insert_at_end(20)
-
 dll.insert_at_end(30)
-
 dll.traverse_list()
+```
 
+---
 
-## Sample Output
+## 📤 Sample Output
 
+```
 10 20 30
+```
 
-## Result
+---
+
+## ✅ Result
 
 The program successfully:
-
-Implements a Doubly Linked List
-
-Inserts elements at the end of the list
-
-Traverses and displays all elements of the list
+- Implements a Doubly Linked List
+- Inserts elements at the end of the list
+- Traverses and displays all elements of the list
